@@ -34,7 +34,7 @@ class GraphicsEngine:
         self.delta_time = 0
         self.time = 0
 
-        self.light = Light()
+        self.light = Light(position=(10000, 2500, 0))
 
         self.camera = Camera(self)
 
