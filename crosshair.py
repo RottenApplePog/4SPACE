@@ -43,7 +43,7 @@ class Crosshair:
     def render(self):
         program = self.program.programs['image']
 
-        self.display.blit(self.img, pg.mouse.get_pos())
+        self.display.blit(self.img, SCREEN_MID)
 
         self.texture = self.surface_to_texture(self.display)
         program['tex'] = 0
@@ -55,3 +55,4 @@ class Crosshair:
 
     def destroy(self):
         self.program.destroy()
+        pg.quit()
