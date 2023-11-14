@@ -9,6 +9,3 @@ class VBO:
 
     def destroy(self):
         [vbo.destroy() for vbo in self.vbos.values()]
-
-
-

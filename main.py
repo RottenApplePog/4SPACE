@@ -60,6 +60,7 @@ class GraphicsEngine:
     def render(self):
         self.ctx.clear(color=BG_COLOR)
         self.scene.render()
+        self.mesh.crosshair.render()
         pg.display.flip()
 
     def get_time(self):

@@ -3,7 +3,7 @@ import math
 import glm
 
 # screen
-WIN_RES = glm.vec2(1600, 900)
+WIN_RES = glm.vec2(1000, 563)
 FPS_CAP = 0
 
 # camera
