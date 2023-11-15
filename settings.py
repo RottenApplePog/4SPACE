@@ -4,7 +4,7 @@ import glm
 
 # screen
 WIN_RES = glm.vec2(1000, 563)
-SCREEN_MID = glm.vec2(WIN_RES/2)
+SCREEN_MID = glm.vec2(WIN_RES/2-18)
 FPS_CAP = 0
 
 # camera

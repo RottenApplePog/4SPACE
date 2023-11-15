@@ -26,7 +26,7 @@ class Scene:
                  ))
         '''
 
-        n, s = 80, 2
+        n, s = 20, 3
         for x in range(-n, n, s):
             for z in range(-n, n, s):
                 add(Cube(app, pos=(x, -s, z+3)))

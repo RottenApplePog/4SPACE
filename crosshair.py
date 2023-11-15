@@ -14,6 +14,7 @@ class Crosshair:
         self.program = ShaderProgram(ctx)
 
         self.display = pg.Surface(WIN_RES)
+        self.display.set_clip(pg.Rect(SCREEN_MID.x, SCREEN_MID.y, 36, 36))
 
         self.render_object = self.get_render_object(self.program.programs['image'])
 
