@@ -1,4 +1,6 @@
 from model import BaseModel
+import glm
+from random import randint
 
 
 class Cube(BaseModel):
@@ -7,10 +9,11 @@ class Cube(BaseModel):
         self.on_init()
 
     def update(self):
+        m_model = glm.rotate(self.m_model, self.app.time, glm.vec3(1, 0, 1)) # move cube 
         self.texture.use()
         self.program['camPos'].write(self.camera.position)
         self.program['m_view'].write(self.camera.m_view)
-        self.program['m_model'].write(self.m_model)
+        self.program['m_model'].write(m_model)
 
     def on_init(self):
         # texture

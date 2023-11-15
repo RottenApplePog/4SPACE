@@ -27,7 +27,10 @@ class Crosshair:
             1.0, -1.0, 1.0, 1.0    # bottom right
         ], 'f'))
 
-        self.img = pg.image.load('assets/crosshairs/crosshair_0.png')
+        self.cross_1 = pg.image.load('assets/crosshairs/crosshair_0.png')
+        self.cross_2 = pg.image.load('assets/crosshairs/crosshair_1.png')
+        self.cross_3 = pg.image.load('assets/crosshairs/crosshair_2.png')
+        self.cross_4 = pg.image.load('assets/crosshairs/crosshair_3.png')
 
     def get_render_object(self, program):
         render_object = self.ctx.vertex_array(program, [(self.quad_buffer, '2f 2f', 'vert', 'texcoord')])
@@ -44,7 +47,7 @@ class Crosshair:
     def render(self):
         program = self.program.programs['image']
 
-        self.display.blit(self.img, SCREEN_MID)
+        self.display.blit(self.cross_4, SCREEN_MID)
 
         self.texture = self.surface_to_texture(self.display)
         program['tex'] = 0
