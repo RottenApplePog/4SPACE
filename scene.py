@@ -52,3 +52,5 @@ class Scene:
                          movement=[(0, 0, 0), (random.randrange(-5, 5), random.randrange(-5, 5), random.randrange(-5, 5)),
                                    (0, 0, 0)]
                          ))
+
+        print(len(self.objects))
