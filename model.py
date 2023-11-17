@@ -2,11 +2,12 @@ import glm
 
 
 class BaseModel:
-    def __init__(self, app, vao_name, tex_id, pos=(0, 0, 0), rot=(0, 0, 0), scale=(1, 1, 1)):
+    def __init__(self, app, vao_name, tex_id, pos=(0, 0, 0), rot=(0, 0, 0), scale=(1, 1, 1), movement=None):
         self.app = app
         self.pos = pos
         self.rot = glm.vec3([glm.radians(a) for a in rot])
         self.scale = scale
+        self.movement = movement
         self.m_model = self.get_model_matrix()
         self.tex_id = tex_id
         self.vao = app.mesh.vao.vaos[vao_name]
