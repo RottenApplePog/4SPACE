@@ -1,4 +1,5 @@
 import random
+import pygame as pg
 
 from primitives.shapes.cube import Cube
 from primitives.shapes.plane import Plane
@@ -17,20 +18,37 @@ class Scene:
         app = self.app
         add = self.add_object
 
-        '''
-        add(Cube(app,
-                 pos=(0, -0.025, 0),
-                 scale=(1000, 0.05, 1000),
-                 rot=(0, 0, 0),
-                 tex_id=(1)
-                 ))
-        '''
+        # Translate
 
-        n, s = 20, 3
-        for x in range(-n, n, s):
-            for z in range(-n, n, s):
-                add(Cube(app, pos=(x, -s, z+3)))
+        add(Cube(app,
+                pos=(0, 0, 0),
+                rot=(0, 0, 0),
+                scale=(1, 1, 1),
+                tex_id=(0),
+                movement=[(0, 0, 0), (random.randrange(-5, 5), random.randrange(-5, 5), random.randrange(-5, 5)), (0, 0, 0)]
+                ))
 
     def render(self):
         for obj in self.objects:
             obj.render()
+
+    def update(self):
+        self.scene_events()
+        self.render()
+
+    def scene_events(self):
+        keys = pg.key.get_pressed()
+
+        app = self.app
+        add = self.add_object
+
+        if keys[pg.K_0]:
+            for i in range(100):
+                add(Cube(app,
+                         pos=(0, 0, 0),
+                         rot=(0, 0, 0),
+                         scale=(1, 1, 1),
+                         tex_id=(0),
+                         movement=[(0, 0, 0), (random.randrange(-5, 5), random.randrange(-5, 5), random.randrange(-5, 5)),
+                                   (0, 0, 0)]
+                         ))

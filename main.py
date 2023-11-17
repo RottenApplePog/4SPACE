@@ -60,7 +60,7 @@ class GraphicsEngine:
     def render(self):
         self.ctx.clear(color=BG_COLOR)
 
-        self.scene.render()
+        self.scene.update()
 
         self.mesh.crosshair.render()
 
