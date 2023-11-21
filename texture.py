@@ -8,8 +8,7 @@ class Texture:
         self.textures = {0: self.get_texture(path='assets/textures/orb.png'),
                          1: self.get_texture(path='assets/textures/test.png'),
                          2: self.get_texture(path='assets/textures/derp.png'),
-                         3: self.get_texture(path='assets/textures/orb_32.png'),
-                         4: self.get_texture(path='assets/textures/demon.png')}
+                         3: self.get_texture(path='assets/textures/demon.png')}
 
     def get_texture(self, path):
         texture = pg.image.load(path).convert()
